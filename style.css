@@ -60,7 +60,7 @@ button:hover { background: #ff1493; transform: scale(1.05); }
 
 /* Letter styling */
 .letter {
-  background: url("assets/paper.png");
+  background: url("paper.png");
   background-size: cover;
   width: 95%;
   max-height: 75vh;
@@ -91,9 +91,6 @@ button:hover { background: #ff1493; transform: scale(1.05); }
 /* Pulse animation for start GIF */
 .pulse { animation: pulse 2s infinite; }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-
-/* Confetti animation */
-@keyframes fall { to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 
 /* NO button playful styling */
 #noBtn { position: relative; transition: all 0.3s ease; }
