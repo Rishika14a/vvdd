@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(270deg, #ffb6c1, #ffc0cb, #ffe4e1);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 30px 15px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.page.active { display: block; opacity: 1; }
+
+h1, h2, p {
+  color: #000000; /* Pure black text */
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+p { font-size: 22px; line-height: 1.8; }
+
+button {
+  background: #ff69b4;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 25px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+button:hover { background: #ff1493; transform: scale(1.05); }
+
+.letters button { display: block; width: 90%; margin: 12px auto; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.modal.show { display: flex; }
+
+/* Letter styling */
+.letter {
+  background: url("assets/paper.png");
+  background-size: cover;
+  width: 95%;
+  max-height: 75vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 12px;
+  position: relative;
+  animation: unfold 0.6s ease;
+}
+.letter p {
+  color: #000000;
+  font-size: 20px;
+  line-height: 1.8;
+  word-spacing: 8px;
+  white-space: pre-wrap;
+}
+
+@keyframes unfold { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+
+/* Stamp */
+.stamp { width: 80px; position: absolute; top: -20px; right: -20px; animation: stamp 0.7s ease; }
+@keyframes stamp { from { transform: scale(3) rotate(-20deg); opacity: 0; } to { transform: scale(1) rotate(0); opacity: 1; } }
+
+/* GIF styling */
+.gif { width: 180px; margin: 20px auto; animation: popIn 1s ease; }
+@keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Pulse animation for start GIF */
+.pulse { animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+/* Confetti animation */
+@keyframes fall { to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+
+/* NO button playful styling */
+#noBtn { position: relative; transition: all 0.3s ease; }
+
+/* 📱 Mobile adjustments */
+@media (max-width: 600px) {
+  h1 { font-size: 34px; }
+  h2 { font-size: 26px; }
+  p, .letter p { font-size: 18px; line-height: 1.6; }
+  button { width: 95%; font-size: 18px; }
+  .gif { width: 140px; }
+  .letter { width: 95%; max-height: 70vh; padding: 20px; }
+}

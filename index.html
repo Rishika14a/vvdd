@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Him ❤️</title>
+  <!-- Unique but readable font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+  <h1>Hey You 💗</h1>
+  <img src="assets/love2.gif" class="gif pulse">
+  <p>This little space is only for you.</p>
+  <button onclick="nextPage()">Start 💌</button>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+  <h1>Something From My Heart 🌸</h1>
+  <p>Open any letter you like.</p>
+  <button onclick="nextPage()">Open Letters 📜</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+  <h2>Choose a Letter 💕</h2>
+  <div class="letters">
+    <button onclick="openLetter(0)">💌 Letter 1</button>
+    <button onclick="openLetter(1)">💌 Letter 2</button>
+    <button onclick="openLetter(2)">💌 Letter 3</button>
+    <button onclick="openLetter(3)">💌 Letter 4</button>
+    <button onclick="openLetter(4)">💌 Letter 5</button>
+  </div>
+  <button onclick="nextPage()">Continue ❤️</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+  <h1>One Last Question 💍</h1>
+  <p>Will you be my Valentine?</p>
+  <button onclick="yes()">YES 💖</button>
+  <button id="noBtn">NO 🙈</button>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+  <h1>I Love You ❤️</h1>
+  <h2>Happy Valentine’s Day 💌</h2>
+  <img src="assets/love.gif" class="gif">
+</section>
+
+<!-- LETTER MODAL -->
+<div class="modal" id="modal">
+  <div class="letter">
+    <img src="assets/stamp.png" class="stamp">
+    <p id="letterText"></p>
+    <button onclick="closeLetter()">Close 💕</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
